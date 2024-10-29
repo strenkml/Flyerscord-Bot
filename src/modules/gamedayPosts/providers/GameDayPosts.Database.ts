@@ -1,5 +1,5 @@
-import Database from "../../../common/providers/Database";
-import IGameDayPost from "../interfaces/GameDayPost";
+import Database from "../../../common/providers/Database.ts";
+import IGameDayPost from "../interfaces/GameDayPost.ts";
 
 export default class GameDayPostsDB extends Database {
   private static instance: GameDayPostsDB;

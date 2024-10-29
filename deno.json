@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "tasks": {
+    "start": "deno run src/bot.ts"
+  },
+  "license": "GPLV3",
+  "lint": {
+    "rules": {
+      "exclude": ["require-await"]
+    }
+  },
+  "fmt": {
+    "indentWidth": 2,
+    "semiColons": true,
+    "singleQuote": false,
+    "useTabs": false
+  },
+  "nodeModulesDir": "auto",
+  "imports": {
+    "@discordjs/builders": "npm:@discordjs/builders@^1.9.0",
+    "axios": "npm:axios@^1.7.7",
+    "canvas": "npm:canvas@^2.11.2",
+    "discord.js": "npm:discord.js@^14.16.3",
+    "enmap": "npm:enmap@^6.0.3",
+    "express": "npm:express@^4.21.1",
+    "imgur": "npm:imgur@^2.4.2",
+    "jsdom": "npm:jsdom@^25.0.1",
+    "mee6-levels-api": "npm:mee6-levels-api@^1.3.1",
+    "nhl-api-wrapper-ts": "npm:nhl-api-wrapper-ts@^1.0.0",
+    "node-schedule": "npm:node-schedule@^2.1.1",
+    "stumper": "npm:stumper@^1.0.2",
+    "typescript": "npm:typescript@^5.6.3"
+  }
+}

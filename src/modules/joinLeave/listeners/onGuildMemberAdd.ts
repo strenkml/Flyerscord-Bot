@@ -1,8 +1,8 @@
 import { bold } from "discord.js";
-import Config from "../../../common/config/Config";
-import ClientManager from "../../../common/managers/ClientManager";
-import discord from "../../../common/utils/discord/discord";
-import { createImage } from "../utils/imageGeneration";
+import Config from "../../../common/config/Config.ts";
+import ClientManager from "../../../common/managers/ClientManager.ts";
+import discord from "../../../common/utils/discord/discord.ts";
+import { createImage } from "../utils/imageGeneration.ts";
 import Stumper from "stumper";
 
 export default (): void => {

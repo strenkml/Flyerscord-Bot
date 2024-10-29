@@ -1,5 +1,5 @@
-import Module from "../../common/models/Module";
-import SlashCommand from "../../common/models/SlashCommand";
+import Module from "../../common/models/Module.ts";
+import SlashCommand from "../../common/models/SlashCommand.ts";
 
 export default class AdminModule extends Module {
   constructor() {

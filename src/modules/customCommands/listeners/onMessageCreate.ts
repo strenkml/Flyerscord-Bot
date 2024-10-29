@@ -2,10 +2,10 @@ import { Message } from "discord.js";
 
 import Stumper from "stumper";
 import CustomCommandsDB from "../providers/CustomCommands.Database";
-import Config from "../../../common/config/Config";
-import ClientManager from "../../../common/managers/ClientManager";
-import discord from "../../../common/utils/discord/discord";
-import CommandImporter from "../utils/CommandImporter";
+import Config from "../../../common/config/Config.ts";
+import ClientManager from "../../../common/managers/ClientManager.ts";
+import discord from "../../../common/utils/discord/discord.ts";
+import CommandImporter from "../utils/CommandImporter.ts";
 
 export default (): void => {
   ClientManager.getInstance().client.on("messageCreate", async (message: Message) => {

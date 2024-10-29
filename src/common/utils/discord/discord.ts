@@ -1,12 +1,12 @@
-import * as messages from "./messages";
-import * as reactions from "./reactions";
-import * as emojis from "./emojis";
-import * as channels from "./channels";
-import * as roles from "./roles";
-import * as users from "./users";
-import * as guilds from "./guilds";
-import * as members from "./members";
-import * as forums from "./forums";
+import * as messages from "./messages.ts";
+import * as reactions from "./reactions.ts";
+import * as emojis from "./emojis.ts";
+import * as channels from "./channels.ts";
+import * as roles from "./roles.ts";
+import * as users from "./users.ts";
+import * as guilds from "./guilds.ts";
+import * as members from "./members.ts";
+import * as forums from "./forums.ts";
 
 export default {
   messages: messages,

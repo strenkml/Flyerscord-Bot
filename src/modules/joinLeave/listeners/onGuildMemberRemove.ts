@@ -1,7 +1,7 @@
 import { AttachmentBuilder, bold } from "discord.js";
-import ClientManager from "../../../common/managers/ClientManager";
-import discord from "../../../common/utils/discord/discord";
-import Config from "../../../common/config/Config";
+import ClientManager from "../../../common/managers/ClientManager.ts";
+import discord from "../../../common/utils/discord/discord.ts";
+import Config from "../../../common/config/Config.ts";
 import Stumper from "stumper";
 
 export default (): void => {

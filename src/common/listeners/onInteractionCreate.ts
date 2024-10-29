@@ -8,8 +8,8 @@ import {
 } from "discord.js";
 
 import Stumper from "stumper";
-import ModalMenu from "../models/ModalMenu";
-import { MessageContextMenuCommand, UserContextMenuCommand } from "../models/ContextMenuCommand";
+import ModalMenu from "../models/ModalMenu.ts";
+import { MessageContextMenuCommand, UserContextMenuCommand } from "../models/ContextMenuCommand.ts";
 
 export default (client: Client): void => {
   client.on("interactionCreate", async (interaction: Interaction) => {

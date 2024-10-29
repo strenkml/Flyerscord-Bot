@@ -1,13 +1,13 @@
 import nhlApi from "nhl-api-wrapper-ts";
-import { GAME_TYPE, TEAM_TRI_CODE } from "nhl-api-wrapper-ts/dist/interfaces/Common";
-import Time from "../../../common/utils/Time";
+import { GAME_TYPE, TEAM_TRI_CODE } from "nhl-api-wrapper-ts/dist/interfaces/Common.ts";
+import Time from "../../../common/utils/Time.ts";
 import Stumper from "stumper";
 
-import discord from "../../../common/utils/discord/discord";
+import discord from "../../../common/utils/discord/discord.ts";
 import { GuildForumTag, time, TimestampStyles } from "discord.js";
-import Config from "../../../common/config/Config";
+import Config from "../../../common/config/Config.ts";
 import GameDayPostsDB from "../providers/GameDayPosts.Database";
-import { IClubScheduleOutput_games } from "nhl-api-wrapper-ts/dist/interfaces/club/schedule/ClubSchedule";
+import { IClubScheduleOutput_games } from "nhl-api-wrapper-ts/dist/interfaces/club/schedule/ClubSchedule.ts";
 
 export async function checkForGameDay(): Promise<void> {
   const res = await nhlApi.teams.schedule.getCurrentTeamSchedule({ team: TEAM_TRI_CODE.PHILADELPHIA_FLYERS });

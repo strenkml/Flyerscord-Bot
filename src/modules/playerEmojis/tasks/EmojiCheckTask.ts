@@ -1,9 +1,9 @@
-import Task from "../../../common/models/Task";
+import Task from "../../../common/models/Task.ts";
 import nhlApi from "nhl-api-wrapper-ts";
 import PlayerEmojisDB from "../providers/PlayerEmojis.Database";
-import { TEAM_TRI_CODE } from "nhl-api-wrapper-ts/dist/interfaces/Common";
-import discord from "../../../common/utils/discord/discord";
-import { ITeamRosterNowOutput } from "nhl-api-wrapper-ts/dist/interfaces/roster/TeamRosterNow";
+import { TEAM_TRI_CODE } from "nhl-api-wrapper-ts/dist/interfaces/Common.ts";
+import discord from "../../../common/utils/discord/discord.ts";
+import { ITeamRosterNowOutput } from "nhl-api-wrapper-ts/dist/interfaces/roster/TeamRosterNow.ts";
 import Stumper from "stumper";
 
 export default class EmojiCheckTask extends Task {

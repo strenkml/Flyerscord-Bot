@@ -81,5 +81,5 @@ export async function createImage(username: string, profilePictureUrl: string, m
   ctx.clip();
   ctx.drawImage(profilePicture, centerX - innerRadius, centerY - innerRadius, innerRadius * 2, innerRadius * 2);
 
-  return canvas.toBuffer("image/png");
+  return canvas.toBuffer("image/png.ts");
 }

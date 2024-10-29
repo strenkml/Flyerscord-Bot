@@ -1,4 +1,4 @@
-import { IUserEvent } from "./IUserEvent";
+import { IUserEvent } from "./IUserEvent.ts";
 
 export interface IUserInfo {
   userId: string;

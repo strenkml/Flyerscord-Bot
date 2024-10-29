@@ -1,7 +1,7 @@
-import Module from "../../common/models/Module";
-import SlashCommand from "../../common/models/SlashCommand";
-import onMessageCreate from "./listeners/onMessageCreate";
-import { calculateLevels } from "./utils/requiredExp";
+import Module from "../../common/models/Module.ts";
+import SlashCommand from "../../common/models/SlashCommand.ts";
+import onMessageCreate from "./listeners/onMessageCreate.ts";
+import { calculateLevels } from "./utils/requiredExp.ts";
 
 export default class LevelsModule extends Module {
   constructor() {

@@ -1,7 +1,7 @@
 import Stumper from "stumper";
-import Database from "../../../common/providers/Database";
-import { IUserEvent } from "../interfaces/IUserEvent";
-import { IUserInfo } from "../interfaces/IUserInfo";
+import Database from "../../../common/providers/Database.ts";
+import { IUserEvent } from "../interfaces/IUserEvent.ts";
+import { IUserInfo } from "../interfaces/IUserInfo.ts";
 
 export default class UserManagementDB extends Database {
   private static instance: UserManagementDB;

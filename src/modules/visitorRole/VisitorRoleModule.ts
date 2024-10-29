@@ -1,8 +1,8 @@
-import Module from "../../common/models/Module";
-import onGuildMemberAdd from "./listeners/onGuildMemberAdd";
-import { createVisitorRoleMessageIfNeeded } from "./utils/utils";
-import onMessageReactionAdd from "./listeners/onMessageReactionAdd";
-import onMessageReactionRemove from "./listeners/onMessageReactionRemove";
+import Module from "../../common/models/Module.ts";
+import onGuildMemberAdd from "./listeners/onGuildMemberAdd.ts";
+import { createVisitorRoleMessageIfNeeded } from "./utils/utils.ts";
+import onMessageReactionAdd from "./listeners/onMessageReactionAdd.ts";
+import onMessageReactionRemove from "./listeners/onMessageReactionRemove.ts";
 
 export default class VistorRoleModule extends Module {
   constructor() {

@@ -1,10 +1,10 @@
 import Stumper from "stumper";
-import Time from "../../../common/utils/Time";
+import Time from "../../../common/utils/Time.ts";
 
-import Database from "../../../common/providers/Database";
-import ICustomCommand, { ICustomCommandHistory } from "../interfaces/ICustomCommand";
-import { updateCommandList } from "../utils/util";
-import Imgur from "../utils/Imgur";
+import Database from "../../../common/providers/Database.ts";
+import ICustomCommand, { ICustomCommandHistory } from "../interfaces/ICustomCommand.ts";
+import { updateCommandList } from "../utils/util.ts";
+import Imgur from "../utils/Imgur.ts";
 
 export default class CustomCommandsDB extends Database {
   private static instance: CustomCommandsDB;

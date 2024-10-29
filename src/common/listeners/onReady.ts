@@ -1,18 +1,18 @@
 import { Client, REST, Routes, RESTPostAPIChatInputApplicationCommandsJSONBody } from "discord.js";
 
 import Stumper from "stumper";
-import Config from "../config/Config";
-import SlashCommandManager from "../managers/SlashCommandManager";
-import TextCommandManager from "../managers/TextCommandManager";
-import ModalMenuManager from "../managers/ModalMenuManager";
-import ContextMenuCommandManager from "../managers/ContextMenuManager";
+import Config from "../config/Config.ts";
+import SlashCommandManager from "../managers/SlashCommandManager.ts";
+import TextCommandManager from "../managers/TextCommandManager.ts";
+import ModalMenuManager from "../managers/ModalMenuManager.ts";
+import ContextMenuCommandManager from "../managers/ContextMenuManager.ts";
 
 export default (client: Client): void => {
   client.on("ready", async () => {
-    const slashCommands = await readSlashCommands(client);
-    await readTextCommands(client);
-    await readModals(client);
-    await readContextMenus(client);
+    const slashCommands = readSlashCommands(client);
+    readTextCommands(client);
+    readModals(client);
+    readContextMenus(client);
 
     Stumper.info("Registering guild slash commands", "clientReady");
     registerSlashCommands(client, slashCommands);
@@ -53,7 +53,7 @@ function registerSlashCommands(client: Client, slashCommands: Array<RESTPostAPIC
   }
 }
 
-async function readSlashCommands(client: Client): Promise<Array<RESTPostAPIChatInputApplicationCommandsJSONBody>> {
+function readSlashCommands(client: Client): Array<RESTPostAPIChatInputApplicationCommandsJSONBody> {
   const commands: Array<RESTPostAPIChatInputApplicationCommandsJSONBody> = [];
 
   const slashCommands = SlashCommandManager.getInstance().getCommands();
@@ -66,7 +66,7 @@ async function readSlashCommands(client: Client): Promise<Array<RESTPostAPIChatI
   return commands;
 }
 
-async function readTextCommands(client: Client): Promise<void> {
+function readTextCommands(client: Client): void {
   const textCommands = TextCommandManager.getInstance().getCommands();
   textCommands.forEach((command) => {
     client.textCommands.set(command.command, command);
@@ -75,7 +75,7 @@ async function readTextCommands(client: Client): Promise<void> {
   Stumper.info(`Successfully loaded ${textCommands.size} text commands!`, "readTextCommands");
 }
 
-async function readModals(client: Client): Promise<void> {
+function readModals(client: Client): void {
   const modalMenus = ModalMenuManager.getInstance().getCommands();
   modalMenus.forEach((command) => {
     client.modals.set(command.id, command);
@@ -84,7 +84,7 @@ async function readModals(client: Client): Promise<void> {
   Stumper.info(`Successfully loaded ${client.modals.size} modals!`, "readModals");
 }
 
-async function readContextMenus(client: Client): Promise<void> {
+function readContextMenus(client: Client): void {
   const contextMenus = ContextMenuCommandManager.getInstance().getCommands();
   contextMenus.forEach((command) => {
     client.contextMenus.set(command.name, command);

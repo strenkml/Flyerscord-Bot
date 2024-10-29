@@ -1,7 +1,7 @@
-import ModalMenu from "../../models/ModalMenu";
-import SlashCommand from "../../models/SlashCommand";
-import TextCommand from "../../models/TextCommand";
-import { ContextMenuCommand } from "../../models/ContextMenuCommand";
+import ModalMenu from "../../models/ModalMenu.ts";
+import SlashCommand from "../../models/SlashCommand.ts";
+import TextCommand from "../../models/TextCommand.ts";
+import { ContextMenuCommand } from "../../models/ContextMenuCommand.ts";
 
 export {};
 

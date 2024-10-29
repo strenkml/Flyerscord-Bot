@@ -1,10 +1,10 @@
 import { ChatInputCommandInteraction, EmbedBuilder } from "discord.js";
 import nhlApi from "nhl-api-wrapper-ts";
 
-import SlashCommand, { PARAM_TYPES } from "../../../../common/models/SlashCommand";
-import { TEAM_TRI_CODE } from "nhl-api-wrapper-ts/dist/interfaces/Common";
-import { IClubScheduleNowOutput } from "nhl-api-wrapper-ts/dist/interfaces/club/schedule/ClubScheduleNow";
-import Time from "../../../../common/utils/Time";
+import SlashCommand, { PARAM_TYPES } from "../../../../common/models/SlashCommand.ts";
+import { TEAM_TRI_CODE } from "nhl-api-wrapper-ts/dist/interfaces/Common.ts";
+import { IClubScheduleNowOutput } from "nhl-api-wrapper-ts/dist/interfaces/club/schedule/ClubScheduleNow.ts";
+import Time from "../../../../common/utils/Time.ts";
 
 export default class ScheduleCommand extends SlashCommand {
   constructor() {
@@ -17,7 +17,7 @@ export default class ScheduleCommand extends SlashCommand {
 
   async execute(interaction: ChatInputCommandInteraction): Promise<void> {
     const numberOfGames: number = this.getParamValue(interaction, PARAM_TYPES.INTEGER, "number") || 5;
-
+    
     const response = await nhlApi.teams.schedule.getCurrentTeamSchedule({ team: TEAM_TRI_CODE.PHILADELPHIA_FLYERS });
 
     if (response.status == 200) {

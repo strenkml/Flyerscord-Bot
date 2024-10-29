@@ -1,14 +1,14 @@
-import ModuleSetupMissingException from "../exceptions/ModuleSetupMissingException";
+import ModuleSetupMissingException from "../exceptions/ModuleSetupMissingException.ts";
 import Stumper from "stumper";
-import SlashCommand from "./SlashCommand";
-import ModalMenu from "./ModalMenu";
-import TextCommand from "./TextCommand";
-import ContextMenuCommand from "./ContextMenuCommand";
-import fs from "fs";
-import SlashCommandManager from "../managers/SlashCommandManager";
-import ModalMenuManager from "../managers/ModalMenuManager";
-import TextCommandManager from "../managers/TextCommandManager";
-import ContextMenuCommandManager from "../managers/ContextMenuManager";
+import SlashCommand from "./SlashCommand.ts";
+import ModalMenu from "./ModalMenu.ts";
+import TextCommand from "./TextCommand.ts";
+import ContextMenuCommand from "./ContextMenuCommand.ts";
+import fs from "node:fs";
+import SlashCommandManager from "../managers/SlashCommandManager.ts";
+import ModalMenuManager from "../managers/ModalMenuManager.ts";
+import TextCommandManager from "../managers/TextCommandManager.ts";
+import ContextMenuCommandManager from "../managers/ContextMenuManager.ts";
 
 export default abstract class Module {
   protected name: string;

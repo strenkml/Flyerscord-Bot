@@ -7,14 +7,14 @@ Stumper.setConfig({ logLevel: LOG_LEVEL.ALL });
 /* -------------------------------------------------------------------------- */
 /*                        Setup Process Error Handling                        */
 /* -------------------------------------------------------------------------- */
-import processErrorHandling from "./common/listeners/processErrorHandling";
+import processErrorHandling from "./common/listeners/processErrorHandling.ts";
 
 processErrorHandling();
 
 /* -------------------------------------------------------------------------- */
 /*                                Check Config                                */
 /* -------------------------------------------------------------------------- */
-import Config from "./common/config/Config";
+import Config from "./common/config/Config.ts";
 
 if (!Config.fileExists()) {
   Stumper.error("Config file not found", "main");
@@ -36,7 +36,7 @@ const client = new Client({
 /* -------------------------------------------------------------------------- */
 /*                        Setup Discord Error Handling                        */
 /* -------------------------------------------------------------------------- */
-import discordErrorHandling from "./common/listeners/discordErrorHandling";
+import discordErrorHandling from "./common/listeners/discordErrorHandling.ts";
 
 discordErrorHandling(client);
 
@@ -51,11 +51,11 @@ client.contextMenus = new Collection();
 /* -------------------------------------------------------------------------- */
 /*                               Setup Managers                               */
 /* -------------------------------------------------------------------------- */
-import ClientManager from "./common/managers/ClientManager";
-import SlashCommandManager from "./common/managers/SlashCommandManager";
-import TextCommandManager from "./common/managers/TextCommandManager";
-import ContextMenuCommandManager from "./common/managers/ContextMenuManager";
-import ModalMenuManager from "./common/managers/ModalMenuManager";
+import ClientManager from "./common/managers/ClientManager.ts";
+import SlashCommandManager from "./common/managers/SlashCommandManager.ts";
+import TextCommandManager from "./common/managers/TextCommandManager.ts";
+import ContextMenuCommandManager from "./common/managers/ContextMenuManager.ts";
+import ModalMenuManager from "./common/managers/ModalMenuManager.ts";
 
 ClientManager.getInstance(client);
 TextCommandManager.getInstance();
@@ -66,17 +66,17 @@ ModalMenuManager.getInstance();
 /* -------------------------------------------------------------------------- */
 /*                              Register Modules                              */
 /* -------------------------------------------------------------------------- */
-import AdminModule from "./modules/admin/AdminModule";
-import CustomCommandsModule from "./modules/customCommands/CustomCommandsModule";
-import DaysUntilModule from "./modules/daysUntil/DaysUntilModule";
-import GameDayPostsModule from "./modules/gamedayPosts/GameDayPostsModule";
-import JoinLeaveModule from "./modules/joinLeave/JoinLeaveModule";
-import LevelsModule from "./modules/levels/LevelsModule";
-import MiscModule from "./modules/misc/MiscModule";
-import NHLModule from "./modules/nhl/NHLModule";
-import PlayerEmojisModule from "./modules/playerEmojis/PlayerEmojisModule";
-import UserManagementModule from "./modules/userManagement/UserManagementModule";
-import VisitorRoleModule from "./modules/visitorRole/VisitorRoleModule";
+import AdminModule from "./modules/admin/AdminModule.ts";
+import CustomCommandsModule from "./modules/customCommands/CustomCommandsModule.ts";
+import DaysUntilModule from "./modules/daysUntil/DaysUntilModule.ts";
+import GameDayPostsModule from "./modules/gamedayPosts/GameDayPostsModule.ts";
+import JoinLeaveModule from "./modules/joinLeave/JoinLeaveModule.ts";
+import LevelsModule from "./modules/levels/LevelsModule.ts";
+import MiscModule from "./modules/misc/MiscModule.ts";
+import NHLModule from "./modules/nhl/NHLModule.ts";
+import PlayerEmojisModule from "./modules/playerEmojis/PlayerEmojisModule.ts";
+import UserManagementModule from "./modules/userManagement/UserManagementModule.ts";
+import VisitorRoleModule from "./modules/visitorRole/VisitorRoleModule.ts";
 
 new AdminModule().enable();
 new CustomCommandsModule().enable();
@@ -93,9 +93,9 @@ new VisitorRoleModule().enable();
 /* -------------------------------------------------------------------------- */
 /*                      Register Our Other Event Handlers                     */
 /* -------------------------------------------------------------------------- */
-import onMessageCreate from "./common/listeners/onMessageCreate";
-import onInteractionCreate from "./common/listeners/onInteractionCreate";
-import onReady from "./common/listeners/onReady";
+import onMessageCreate from "./common/listeners/onMessageCreate.ts";
+import onInteractionCreate from "./common/listeners/onInteractionCreate.ts";
+import onReady from "./common/listeners/onReady.ts";
 
 onMessageCreate(client);
 onInteractionCreate(client);
@@ -110,13 +110,14 @@ client.login(Config.getConfig().token);
 /*                           Setup HTTP Health Check                          */
 /* -------------------------------------------------------------------------- */
 import express from "express";
-import { getBotHealth } from "./common/utils/healthCheck";
-import IBotHealth from "./common/interfaces/IBotHealth";
+import { getBotHealth } from "./common/utils/healthCheck.ts";
+import IBotHealth from "./common/interfaces/IBotHealth.ts";
+import process from "node:process";
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.get("/health", (req, res) => {
+app.get("/health.ts", (_req, res) => {
   const health: IBotHealth = getBotHealth();
   if (health.status === "healthy") {
     res.status(200).json(health);

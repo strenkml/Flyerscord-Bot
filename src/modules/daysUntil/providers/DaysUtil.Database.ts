@@ -1,6 +1,6 @@
-import Database from "../../../common/providers/Database";
-import IDbEvent from "../interfaces/IDbEvent";
-import events from "../models/DaysUntilEvents";
+import Database from "../../../common/providers/Database.ts";
+import IDbEvent from "../interfaces/IDbEvent.ts";
+import events from "../models/DaysUntilEvents.ts";
 
 export default class DaysUntilDB extends Database {
   private static instance: DaysUntilDB;

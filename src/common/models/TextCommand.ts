@@ -1,5 +1,5 @@
 import { Message } from "discord.js";
-import ITextCommandOptions from "../interfaces/ITextCommandOptions";
+import ITextCommandOptions from "../interfaces/ITextCommandOptions.ts";
 
 export default abstract class TextCommand {
   readonly name: string;

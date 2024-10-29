@@ -8,9 +8,9 @@ import {
   MessageActionRowComponentBuilder,
 } from "discord.js";
 
-import SlashCommand from "../../../../common/models/SlashCommand";
+import SlashCommand from "../../../../common/models/SlashCommand.ts";
 import LevelsDB from "../../providers/Levels.Database";
-import { IUserLevel } from "../../interfaces/IUserLevel";
+import { IUserLevel } from "../../interfaces/IUserLevel.ts";
 
 export default class LeaderboardCommand extends SlashCommand {
   private readonly EMBED_PAGE_SIZE = 25;

@@ -1,9 +1,9 @@
 import { Interaction } from "discord.js";
-import ClientManager from "../../../common/managers/ClientManager";
+import ClientManager from "../../../common/managers/ClientManager.ts";
 import { AutocompleteInteraction } from "discord.js";
 import DaysUntilDB from "../providers/DaysUtil.Database";
-import events, { getEventNames, getKeyByName } from "../models/DaysUntilEvents";
-import IDaysUntilEvent from "../interfaces/IDaysUntilEvent";
+import events, { getEventNames, getKeyByName } from "../models/DaysUntilEvents.ts";
+import IDaysUntilEvent from "../interfaces/IDaysUntilEvent.ts";
 
 export default (): void => {
   ClientManager.getInstance().client.on("interactionCreate", async (interaction: Interaction) => {

@@ -1,7 +1,7 @@
-import fs from "fs";
+import fs from "node:fs";
 
-import * as config from "./config.json";
-import { IConfig } from "./IConfig";
+import * as config from "./config.json" with { "type": "json" };
+import { IConfig } from "./IConfig.ts";
 
 export default class Config {
   static fileExists(): boolean {

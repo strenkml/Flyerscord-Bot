@@ -1,8 +1,8 @@
 import { ChatInputCommandInteraction } from "discord.js";
-import { AdminSlashCommand } from "../../../../common/models/SlashCommand";
+import { AdminSlashCommand } from "../../../../common/models/SlashCommand.ts";
 import CustomCommandsDB from "../../providers/CustomCommands.Database";
 
-import discord from "../../../../common/utils/discord/discord";
+import discord from "../../../../common/utils/discord/discord.ts";
 
 export default class TestAllCommand extends AdminSlashCommand {
   constructor() {

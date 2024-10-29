@@ -1,7 +1,7 @@
 import { Message } from "discord.js";
 
-import ClientManager from "../../../common/managers/ClientManager";
-import { addMessage } from "../utils/leveling";
+import ClientManager from "../../../common/managers/ClientManager.ts";
+import { addMessage } from "../utils/leveling.ts";
 
 export default (): void => {
   ClientManager.getInstance().client.on("messageCreate", async (message: Message) => {

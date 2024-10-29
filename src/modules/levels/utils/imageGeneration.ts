@@ -73,5 +73,5 @@ export async function createImage(totalMessages: number, currentExp: number, nee
   ctx.font = "30px Arial";
   ctx.fillText(`${currentExp} exp / ${neededExp} exp`, 100, 210);
 
-  return canvas.toBuffer("image/png");
+  return canvas.toBuffer("image/png.ts");
 }
