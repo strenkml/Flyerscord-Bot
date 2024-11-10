@@ -3,6 +3,7 @@ import DaysUntilDB from "../../modules/daysUntil/providers/DaysUtil.Database";
 import GameDayPostsDB from "../../modules/gamedayPosts/providers/GameDayPosts.Database";
 import LevelExpDB from "../../modules/levels/providers/LevelExp.Database";
 import LevelsDB from "../../modules/levels/providers/Levels.Database";
+import LiveDataDB from "../../modules/nhl/providers/LiveData.Database";
 import PlayerEmojisDB from "../../modules/playerEmojis/providers/PlayerEmojis.Database";
 import UserManagementDB from "../../modules/userManagement/providers/UserManagement.Database";
 import GlobalDB from "../providers/Global.Database";
@@ -16,6 +17,7 @@ export function closeAllDbConnections(): void {
   const levelsDB = LevelsDB.getInstance();
   const playerEmojisDB = PlayerEmojisDB.getInstance();
   const userManagementDB = UserManagementDB.getInstance();
+  const liveDataDB = LiveDataDB.getInstance();
 
   globalDb.close();
   customCommandsDB.close();
@@ -25,4 +27,5 @@ export function closeAllDbConnections(): void {
   levelsDB.close();
   playerEmojisDB.close();
   userManagementDB.close();
+  liveDataDB.close();
 }
